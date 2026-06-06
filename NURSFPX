@@ -1,0 +1,93 @@
+# Product Requirements Document (PRD)
+
+## Project: NURSFPX Platform
+**Date:** June 2026  
+**Document Version:** 1.0  
+**Status:** Approved  
+
+---
+
+## 1. Project Overview
+The objective is to develop a proprietary web platform (**NURSFPX.com**) to host an initial library of **2,195+ academic documents**. Moving away from third-party ecosystems like Course Hero, this platform will serve as a high-trust, brand-building vehicle and a high-converting lead-generation engine for custom, bespoke academic assistance.
+
+---
+
+## 2. Information Architecture & Navigation
+The platform's frontend will enforce a rigid, 3-tier hierarchical structure designed for intuitive user browsing and optimal SEO indexation.
+
+```
+[Level 1: Homepage] 
+       │
+       ▼
+[Level 2: Class Category Page] 
+       │
+       ▼
+[Level 3: Assignment / Document Page]
+```
+
+### 2.1 Level 1: Homepage (University Selection)
+The root landing page will act as a routing portal, featuring prominent entry points for six primary institutional silos with their respective document allocations:
+* **Capella University** (104 documents)
+* **University of Phoenix (UOP)** (776 documents)
+* **University of Arizona Global Campus (UAGC)** (839 documents)
+* **Trident University** (287 documents)
+* **Columbia Southern University** (27 documents)
+* **Southern New Hampshire University (SNHU)** (162 documents)
+
+### 2.2 Level 2: Class Category Page
+Upon selecting a university, the user is presented with a clean, searchable index of specific course codes mapped to that institution (e.g., `COM-FPX 3700`, `PSYCH/650`, `BHA-FPX 4102`).
+
+### 2.3 Level 3: Assignment/Document Page
+The final node of the hierarchy displays individual assessments (e.g., *Assessment 1, Assessment 2, Assessment 3*). This page serves as the primary organic search landing page, hosting specific assignment instructions to capture high-intent traffic.
+
+---
+
+## 3. Functional Requirements
+
+### 3.1 Content Management System (CMS)
+* **Instruction Extraction & Rendering:** The CMS must ingest and display official assignment instructions/prompts (e.g., *"Theoretical Conceptualization Training Guide"*) to act as highly indexable SEO lead magnets.
+* **Dynamic Metadata Engine:** Page titles (`<title>`), meta descriptions, H1 tags, breadcrumbs, and internal navigation elements must populate dynamically based on the current `University -> Course -> Assignment` matrix.
+* **Standardized Layout Layouts:** A unified CSS/UI template system must be applied across all 2,195+ pages. While the layout structure remains rigid, subtle UI theme elements (e.g., accent borders or subtle color cues) should shift to align with the selected university's branding archetype.
+
+### 3.2 Security & Digital Rights Management (DRM)
+* **Obfuscation & "No-Copy" Scripting:** Implement frontend technical blocks including disabling right-click context menus, disabling standard text selection/highlighting (`user-select: none`), and intercepting common keyboard shortcuts (`Ctrl+C`, `Cmd+C`, `Ctrl+U`) to protect on-page copy from scraping.
+* **Gated Solution Architecture:** Official prompt instructions are entirely public for SEO purposes. However, the actual completed, high-scoring solution document must be strictly hidden behind a lead-generation wall. No direct download links or plaintext solution content should exist in the client-side DOM.
+
+### 3.3 Lead Generation & Conversion Optimizations
+* **Omnipresent Floating Contact Anchor:** A persistent header or floating sidebar must continuously display direct human channels:
+    * **Email:** Contact@nursfpx.com
+    * **Phone:** (612) 208-2686
+* **High-Intent Call-to-Actions (CTAs):** Every Level 3 assignment page must prominently display contextual banners offering a **"Custom, AI-Free, and Plagiarism-Free"** version of that exact paper.
+* **Anonymity & Privacy Assurances:** Micro-copy must be embedded near all conversion points to alleviate student anxiety regarding data privacy, institutional compliance, and discretion.
+
+---
+
+## 4. Technical Specifications & Challenges
+
+| Technical Focus | Requirements & Strategy |
+| :--- | :--- |
+| **Scalability** | The backend database must be optimized for fast relational lookups across thousands of course codes, processing metadata and assignment descriptions without degradation in page load speeds. |
+| **Performance (SEO)** | High Core Web Vitals (LCP, FID, CLS) are mandatory to maximize organic search engine rankings for competitive course terms. |
+| **Future Phase: Subscriptions** | The architecture must support future extensions for user authentication/profiles and recurring subscription paywalls for direct library access. |
+| **Future Phase: Marketing Automation** | APIs must accommodate webhook integrations to push captured email leads directly into email marketing suites (e.g., Mailchimp, Klaviyo) for lead nurturing. |
+
+---
+
+## 5. Content Scope (High-Priority Launch Samples)
+The platform deployment must prioritize complete operational pipelines for the following high-demand academic verticals:
+
+### 5.1 Business, Healthcare, & Communication Layouts
+* **NURS-FPX 4005:** Assessment 4 (Stakeholder Presentation)
+* **BHA-FPX 4008:** Assessment 1 (Operating Budget) & Assessment 2 (Financial Statements)
+* **COM-FPX 3700:** Assessment 1 (Interpersonal Conflict)
+
+### 5.2 Psychology Sequential Matrix
+* **PSYCH/650:** Comprehensive programmatic coverage including:
+    * Module 1: Foundations of Psychopathology
+    * Module 2: Anxiety & Related Disorders
+    * Module 3: Substance Use & Addictive Disorders
+
+---
+
+## 6. Strategic Mandate
+The overarching goal of NURSFPX.com is to position the brand as a premier, high-trust academic consultancy. By leveraging official assignment criteria as organic search hooks, the platform must seamlessly funnel stressed academic researchers away from passive reading and convert them into paying clients for bespoke, APA-formatted writing services.
