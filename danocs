@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-## Project: NURSFPX Platform
+## Project: DanDoc Platform
 **Date:** June 2026  
 **Document Version:** 1.0  
 **Status:** Approved  
@@ -8,7 +8,7 @@
 ---
 
 ## 1. Project Overview
-The objective is to develop a proprietary web platform (**NURSFPX.com**) to host an initial library of **2,195+ academic documents**. Moving away from third-party ecosystems like Course Hero, this platform will serve as a high-trust, brand-building vehicle and a high-converting lead-generation engine for custom, bespoke academic assistance.
+The objective is to develop a proprietary web platform (**DanDoc.com**) to host an initial library of **2,195+ academic documents**. Moving away from third-party ecosystems like Course Hero, this platform will serve as a high-trust, brand-building vehicle and a high-converting lead-generation engine for custom, bespoke academic assistance.
 
 ---
 
@@ -55,7 +55,7 @@ The final node of the hierarchy displays individual assessments (e.g., *Assessme
 
 ### 3.3 Lead Generation & Conversion Optimizations
 * **Omnipresent Floating Contact Anchor:** A persistent header or floating sidebar must continuously display direct human channels:
-    * **Email:** Contact@nursfpx.com
+    * **Email:** Contact@DanDoc.com
     * **Phone:** (612) 208-2686
 * **High-Intent Call-to-Actions (CTAs):** Every Level 3 assignment page must prominently display contextual banners offering a **"Custom, AI-Free, and Plagiarism-Free"** version of that exact paper.
 * **Anonymity & Privacy Assurances:** Micro-copy must be embedded near all conversion points to alleviate student anxiety regarding data privacy, institutional compliance, and discretion.
@@ -90,4 +90,4 @@ The platform deployment must prioritize complete operational pipelines for the f
 ---
 
 ## 6. Strategic Mandate
-The overarching goal of NURSFPX.com is to position the brand as a premier, high-trust academic consultancy. By leveraging official assignment criteria as organic search hooks, the platform must seamlessly funnel stressed academic researchers away from passive reading and convert them into paying clients for bespoke, APA-formatted writing services.
+The overarching goal of DanDoc.com is to position the brand as a premier, high-trust academic consultancy. By leveraging official assignment criteria as organic search hooks, the platform must seamlessly funnel stressed academic researchers away from passive reading and convert them into paying clients for bespoke, APA-formatted writing services.
