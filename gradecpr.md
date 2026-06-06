@@ -2,14 +2,16 @@
 
 **Domain:** GradeCPR.com  
 **Date:** June 6, 2026  
-**Version:** 2.1  
-**Status:** Finalized
+**Version:** 3.0  
+**Status:** Ongoing
 
 ---
 
 ## 1. Project Overview
 
 GradeCPR is an academic support platform designed to help students access and understand assignment requirements across **2,195+ documents** from six major universities. The platform provides clear, readable access to course assignment instructions while protecting original content through standard technical measures. Students can review assignment prompts, understand expectations, and reach out for further academic guidance through official contact channels.
+
+The platform is designed to be **non-static** — new universities, courses, and documents can be added at any time through the admin interface without code changes.
 
 **Core Mission:** *Provide transparent access to academic assignment information while maintaining content integrity.*
 
@@ -50,7 +52,7 @@ Students land on the homepage and choose from six universities:
 | University of Phoenix (UOP) | 85+ | 776 |
 | University of Arizona Global Campus (UAGC) | 40+ | 839 |
 | Trident University | 21 | 287 |
-| Columbia Southern University | 1 | 27 |
+| Columbia Southern University | 4 | 27 |
 | Southern New Hampshire University (SNHU) | 90+ | 162 |
 | **TOTAL** | **255+** | **2,195** |
 
@@ -77,8 +79,10 @@ The final page displays the actual assignment instructions. This is the primary 
 | **Dynamic Page Titles** | Each page automatically generates SEO-friendly `<title>` and meta description based on university, course, and assignment |
 | **Breadcrumbs** | Automatic navigation trail showing: Home > University > Course > Assignment |
 | **University Branding** | Subtle color themes (e.g., UOP red, SNHU blue, Capella maroon) applied per university |
-| **Document Counts** | Each course clearly displays number of available documents |
-| **Admin Interface** | Password-protected CMS for adding/editing documents and courses |
+| **Document Counts** | Each course clearly displays number of available documents (auto-updates as content is added) |
+| **Scalable Architecture** | Database and CMS support adding new universities, courses, and documents without code changes |
+| **Admin Interface** | Password-protected interface for creating new universities, adding courses to existing universities, and uploading documents to existing courses |
+| **Bulk Import** | Ability to import multiple documents via CSV/JSON for initial seeding and future batch additions |
 
 ### 4.2 Content Protection
 
@@ -122,9 +126,10 @@ The system requires a PostgreSQL database with three core tables:
 | **Documents** | Stores assignment names, HTML content, word counts, and relationships to courses |
 
 **Key capabilities:**
-- Fast lookups across 2,195+ documents
+- Fast lookups across 2,195+ documents (and growing)
 - Full-text search across all assignment content
 - Efficient pagination and filtering
+- Support for ongoing additions without performance degradation
 
 ---
 
@@ -139,6 +144,7 @@ The backend API must provide the following endpoints:
 | `GET /api/courses/{slug}/documents` | Retrieve documents for a specific course |
 | `GET /api/documents/{slug}` | Retrieve single document content |
 | `GET /api/search?q={query}` | Search across all documents |
+| `POST /api/admin/*` | Admin endpoints for adding/editing content (protected) |
 
 All API responses should be JSON format with appropriate caching headers for performance.
 
@@ -363,7 +369,10 @@ These standards are required to maximize organic search rankings for competitive
 
 | Course Code | Document Count |
 |:---|:---:|
-| [Course code to be confirmed] | 27 |
+| CMJ 5301 | 7 |
+| CMJ 5302 | 7 |
+| CMJ 5303 | 6 |
+| CMJ 5304 | 7 |
 | **TOTAL** | **27** |
 
 ---
@@ -372,7 +381,7 @@ These standards are required to maximize organic search rankings for competitive
 
 | Requirement | Description |
 |:---|:---|
-| **XML Sitemap** | Auto-generated sitemap containing all 2,195+ document URLs |
+| **XML Sitemap** | Auto-generated sitemap containing all document URLs (auto-updates as content is added) |
 | **robots.txt** | Configured to allow full search engine crawling |
 | **Meta Tags** | Unique title, description, and keywords per document |
 | **Structured Data** | Schema.org markup for educational content |
@@ -396,6 +405,7 @@ These standards are required to maximize organic search rankings for competitive
 ## 11. Launch Checklist
 
 - [ ] Database created and populated with all 2,195+ documents
+- [ ] Bulk import process tested for future additions
 - [ ] API endpoints built and tested
 - [ ] Blazor frontend connected to API
 - [ ] Content protection implemented across all document pages
@@ -405,6 +415,7 @@ These standards are required to maximize organic search rankings for competitive
 - [ ] Contact@GradeCPR.com email active
 - [ ] Phone support line (612) 208-2686 verified
 - [ ] Production hosting environment provisioned
+- [ ] Admin CMS interface tested for adding new content
 
 ---
 
@@ -417,6 +428,7 @@ These standards are required to maximize organic search rankings for competitive
 | **Support volume** | Auto-response system for common inquiries |
 | **Technical bypass** | Standard protections cover 95% of users; advanced bypass is acceptable |
 | **SEO impact of copy protection** | Protections are client-side only; search engines receive full indexable content |
+| **Scalability with growth** | Database indexing and caching optimized for future additions |
 
 ---
 
@@ -429,9 +441,71 @@ These standards are required to maximize organic search rankings for competitive
 | Bounce rate | Under 40% |
 | Average time on page | 2+ minutes |
 | Search ranking for target course codes | Top 5 positions |
+| New documents added monthly | Ongoing (no fixed target) |
+
+---
+
+## 14. Competitive Positioning: How GradeCPR is Different
+
+GradeCPR is built to address the major frustrations students face with existing platforms like **Course Hero** and **Scribd**.
+
+### The Problem with Course Hero
+
+| Issue | Student Experience |
+|:---|:---|
+| **Bait-and-switch SEO** | Google shows full content; users see blurred previews behind a paywall |
+| **Declining AI quality** | AI answers are only ~75% accurate on straightforward subjects |
+| **Expensive subscription** | $39.95/month with auto-renewal and difficult cancellation |
+| **Poor support** | Ticket system with form errors, runaround resolutions |
+| **Privacy concerns** | Student work remains on platform forever, even after account deletion |
+
+### The Problem with Scribd
+
+| Issue | Student Experience |
+|:---|:---|
+| **Billing fraud** | 204 BBB complaints; continues charging after cancellation |
+| **Platform confusion** | Split into 3 services (Scribd/Everand/SlideShare) with legacy plan traps |
+| **Misleading content** | Documents labeled as 2025 edition but download as 2015 edition |
+| **No quality control** | User-uploaded content with no editorial oversight; misinformation cycles |
+| **App reliability** | 2.8 star rating; black screens, download failures |
+| **Poor support** | BBB issued "Pattern of Complaints" alert for unresolved billing issues |
+
+### The GradeCPR Advantage
+
+| Factor | Course Hero | Scribd | GradeCPR |
+|:---|:---:|:---:|:---:|
+| **Monthly subscription** | $39.95 | $11.99 | ❌ None |
+| **Charges after cancellation** | ✅ Yes | ✅ Yes | ❌ N/A |
+| **Blurred/paywalled content** | ✅ Yes | ✅ Yes (preview only) | ❌ Full text |
+| **AI-generated answers** | ✅ Yes (75% accurate) | ❌ N/A | ❌ Human-written only |
+| **Platform splits** | ❌ No | ✅ 3 services | ❌ Single service |
+| **Content verified** | ❌ No | ❌ No | ✅ Yes |
+| **Real human support** | ❌ Ticket system | ❌ Ticket system | ✅ Email + phone |
+| **BBB complaints (3 years)** | 100 | 204 | 0 |
+| **Ongoing content additions** | User-uploaded (unverified) | User-uploaded (unverified) | Admin-controlled (verified) |
+
+### What GradeCPR Does Differently
+
+**No subscription traps.**
+> *"Scribd charges you after you cancel. Course Hero auto-renews at $39.95/month. GradeCPR has no subscription. You pay only when you need help – nothing more, nothing less."*
+
+**What you see is what you get.**
+> *"Course Hero shows Google the full content but shows you a blurred preview. Scribd labels documents as 2025 editions but delivers 2015. GradeCPR shows you everything. No bait. No switch."*
+
+**Human answers, not AI guesses.**
+> *"Course Hero's AI is only 75% accurate. GradeCPR provides human-written, AI-free, plagiarism-free solutions. Your grade shouldn't depend on a chatbot."*
+
+**Real humans, real support.**
+> *"Try getting a human at Scribd or Course Hero. We'll wait. GradeCPR gives you direct email and phone support. Real responses within hours."*
+
+**Your privacy matters.**
+> *"Course Hero keeps your uploaded work forever. GradeCPR only publishes assignment prompts – never student work. Your name never appears on our platform."*
+
+**Built to grow with you.**
+> *"Need a course we don't have yet? We add new content regularly. No platform splits. No confusing changes. Just more help, over time."*
 
 ---
 
 **Document Approved for Development**
 
-*GradeCPR — Supporting academic success with integrity.*
+*GradeCPR.com — Supporting academic success with integrity.*
